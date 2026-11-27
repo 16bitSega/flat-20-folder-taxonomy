@@ -1,6 +1,6 @@
 {
 	"name": "flat-20-folder-taxonomy",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "Scaffold and maintain a flat 20-folder knowledge base with YAML frontmatter normalization, fuzzy domain routing, and offline vault health audits.",
 	"main": "main.js",
 	"scripts": {

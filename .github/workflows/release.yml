@@ -7,6 +7,8 @@ on:
 
 permissions:
   contents: write
+  id-token: write
+  attestations: write
 
 jobs:
   build-and-release:
@@ -20,11 +22,23 @@ jobs:
       - run: npm ci
       - run: npm test
       - run: npm run build
+      - name: Attest build provenance
+        uses: actions/attest-build-provenance@v2
+        with:
+          subject-path: |
+            main.js
+            manifest.json
+            styles.css
       - name: Upload release assets
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ github.ref_name }}
           name: ${{ github.ref_name }}
+          body: |
+            Reproducible CI release `${{ github.ref_name }}` of **20-Folder Flat Taxonomy** with signed GitHub Artifact Attestations (`main.js`, `manifest.json`, `styles.css`).
+
+            - 100% free & offline on desktop and mobile (`isDesktopOnly: false`, zero network calls).
+            - Optional companion for bulk 1,000+ bookmark structuring & Remote MCP + TOON Gateway: https://scraplibra.com/#pricing | https://scraplibra.com/mcp-docs/
           files: |
             main.js
             manifest.json
