@@ -1,0 +1,27 @@
+{
+	"name": "flat-20-folder-taxonomy",
+	"version": "1.0.0",
+	"description": "Scaffold and maintain a flat 20-folder knowledge base with YAML frontmatter normalization, fuzzy domain routing, and offline vault health audits.",
+	"main": "main.js",
+	"scripts": {
+		"dev": "node esbuild.config.mjs",
+		"build": "tsc -noEmit -skipLibCheck && node esbuild.config.mjs production",
+		"test": "node --test tests/taxonomy.test.mjs"
+	},
+	"keywords": [
+		"obsidian",
+		"pkm",
+		"taxonomy",
+		"frontmatter",
+		"knowledge-base"
+	],
+	"author": "Oleksii Obolonskyi",
+	"license": "MIT",
+	"devDependencies": {
+		"@types/node": "^22.0.0",
+		"builtin-modules": "^5.0.0",
+		"esbuild": "^0.25.0",
+		"obsidian": "latest",
+		"typescript": "^5.7.0"
+	}
+}

@@ -1,0 +1,15 @@
+.flat-taxonomy-suggestion {
+	display: flex;
+	flex-direction: column;
+	gap: 2px;
+}
+
+.flat-taxonomy-suggestion-title {
+	font-weight: 600;
+	color: var(--text-normal);
+}
+
+.flat-taxonomy-suggestion-desc {
+	font-size: var(--font-ui-smaller);
+	color: var(--text-muted);
+}

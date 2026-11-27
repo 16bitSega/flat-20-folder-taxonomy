@@ -1,0 +1,10 @@
+{
+	"id": "flat-20-folder-taxonomy",
+	"name": "20-Folder Flat Taxonomy",
+	"version": "1.0.0",
+	"minAppVersion": "1.5.0",
+	"description": "Scaffold and maintain a flat 20-folder knowledge base with YAML frontmatter normalization, fuzzy domain routing, and offline vault health audits.",
+	"author": "Oleksii Obolonskyi",
+	"authorUrl": "https://scraplibra.com/",
+	"isDesktopOnly": false
+}
