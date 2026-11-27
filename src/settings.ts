@@ -62,5 +62,35 @@ export class TaxonomySettingTab extends PluginSettingTab {
 					await this.plugin.saveSettings();
 				}),
 			);
+
+		this.renderCompanionSection(containerEl);
+	}
+
+	private renderCompanionSection(containerEl: HTMLElement): void {
+		new Setting(containerEl).setName("Optional automation and Remote MCP gateway").setHeading();
+
+		new Setting(containerEl)
+			.setName("ScrapLibra Pro Second Brain + Remote MCP")
+			.setDesc(
+				"Optional hosted companion ($4.99/mo or $3.99/mo annual; 10 free notes) for bulk bookmark structuring and live Remote MCP + TOON search in Claude, Cursor, and Gemini.",
+			)
+			.addButton((button) =>
+				button.setButtonText("View plans").setCta().onClick(() => {
+					window.open(
+						"https://scraplibra.com/#pricing?utm_source=obsidian_plugin&utm_medium=settings",
+						"_blank",
+						"noopener",
+					);
+				}),
+			)
+			.addButton((button) =>
+				button.setButtonText("MCP docs").onClick(() => {
+					window.open(
+						"https://scraplibra.com/mcp-docs/?utm_source=obsidian_plugin&utm_medium=settings",
+						"_blank",
+						"noopener",
+					);
+				}),
+			);
 	}
 }
